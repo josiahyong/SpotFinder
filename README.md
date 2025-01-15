@@ -5,5 +5,5 @@ A visualization of a smart parking management system as part of an IoT project i
 
 ### About
 
-This is your project's README.md file. It helps users understand what your
-project does, how to use it and anything else they may need to know.
+In order to launch this visualization locally, you have to install node-red first. 
+Once done, simply import the flows.json file into the node-red dashboard launched.
