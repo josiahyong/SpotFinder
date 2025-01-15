@@ -1,0 +1,216 @@
+[
+    {
+        "id": "1e8325cbfcf47596",
+        "type": "tab",
+        "label": "Smart Parking (IoT Group 2)",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f7f90d0874d759f9",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "590822d3e7bbb156",
+        "type": "ui_tab",
+        "name": "Parking Management",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "a4c8d759e5f8fd4b",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Parking Management System Display",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 100,
+                "sy": 100,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "0387d1b46669fc1b",
+        "type": "ui_group",
+        "name": "Parking Status",
+        "tab": "590822d3e7bbb156",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f76fdbaf9bb1f5d7",
+        "type": "mqtt in",
+        "z": "1e8325cbfcf47596",
+        "name": "",
+        "topic": "smart_parking",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f7f90d0874d759f9",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 410,
+        "y": 180,
+        "wires": [
+            [
+                "58fb2fecdc7d0b22"
+            ]
+        ]
+    },
+    {
+        "id": "58fb2fecdc7d0b22",
+        "type": "json",
+        "z": "1e8325cbfcf47596",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 570,
+        "y": 180,
+        "wires": [
+            [
+                "900a48873bea0fbf"
+            ]
+        ]
+    },
+    {
+        "id": "900a48873bea0fbf",
+        "type": "ui_template",
+        "z": "1e8325cbfcf47596",
+        "group": "0387d1b46669fc1b",
+        "name": "Parking Status Table",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "format": "<div class=\"carpark-container\">\n    <!-- Occupancy Gauge Meter -->\n    <div id=\"occupancy-gauge\" style=\"width: 300px; height: 300px; margin: auto 20px;\"></div>\n    <div class=\"carpark\">\n        <!-- Entrance -->\n        <div class=\"entrance\" id=\"entrance\">\n            <div class=\"car\" id=\"car\"></div>\n            <span>Entrance</span>\n        </div>\n        <!-- Parking spots -->\n        <div class=\"parking-grid\">\n            <div class=\"spot\" id=\"spot1\">Spot 1</div>\n            <div class=\"spot\" id=\"spot2\">Spot 2</div>\n            <div class=\"spot\" id=\"spot3\">Spot 3</div>\n            <div class=\"spot\" id=\"spot4\">Spot 4</div>\n            <div class=\"spot\" id=\"spot5\">Spot 5</div>\n        </div>\n    </div>\n    <!-- Button to move the car -->\n    <button id=\"moveCarButton\">Move to Nearest Empty Spot</button>\n    <!-- Display the nearest empty spot -->\n    <div id=\"nearest\">Nearest Empty Spot: None</div>\n</div>\n\n<script src=\"https://cdn.jsdelivr.net/npm/justgage@1.3.2/justgage.min.js\"></script>\n<script>\n    // Define the parking spot states\n    let parkingStates = {};\n\n    // Initialize the occupancy gauge\n    let occupancyGauge = new JustGage({\n        id: \"occupancy-gauge\", \n        value: 0, \n        min: 0, \n        max: 100, \n        title: \"Occupancy\", \n        label: \"Percent Full\", \n        levelColors: [\"#4CAF50\", \"#FFC107\", \"#FF5733\"] // 3 colors to work with\n    });\n\n    // Order of spots relative to entrance\n    const parkingOrder = [\"Spot 1\", \"Spot 2\", \"Spot 3\", \"Spot 4\", \"Spot 5\"];\n\n    // Initialize references\n    const carElement = document.getElementById(\"car\");\n    const entranceElement = document.getElementById(\"entrance\");\n    const parkingSpots = {\n        \"Spot 1\": document.getElementById(\"spot1\"),\n        \"Spot 2\": document.getElementById(\"spot2\"),\n        \"Spot 3\": document.getElementById(\"spot3\"),\n        \"Spot 4\": document.getElementById(\"spot4\"),\n        \"Spot 5\": document.getElementById(\"spot5\"),\n    };\n\n    const nearestDisplay = document.getElementById(\"nearest\");\n    const moveCarButton = document.getElementById(\"moveCarButton\");\n\n    // Function to calculate and update the occupancy percentage\n    function updateOccupancyGauge() {\n        const totalSpots = Object.keys(parkingStates).length;\n        const occupiedSpots = Object.values(parkingStates).filter(status => status === \"Occupied\").length;\n        const occupancyPercentage = Math.round((occupiedSpots / totalSpots) * 100);\n        // Determine the color based on thresholds\n        let newColor;\n        if (occupancyPercentage <= 33) { \n            newColor=\"#4CAF50\" ; // Green for low occupancy \n        } else if (occupancyPercentage <=66) {\n            newColor=\"#FFC107\" ; // Yellow for medium occupancy \n        } else { \n            newColor=\"#FF5733\" ; // Red for high occupancy \n        } \n        // Update the gauge value \n        occupancyGauge.refresh(occupancyPercentage); \n        // Apply the new color manually\n        const gaugeElement=document.querySelector(\"#occupancy-gauge .fill\"); \n        if (gaugeElement) { \n            gaugeElement.style.fill=newColor; // Update the fill color \n        }\n        console.log(gaugeElement);\n    }\n\n    // Display the initial parking lot state\n    function displayInitialState() {\n        for (const [spotId, status] of Object.entries(parkingStates)) {\n            const spot = parkingSpots[spotId];\n            spot.textContent = spotId;\n            spot.style.backgroundColor = status === \"Empty\" ? \"#4CAF50\" : \"#FF5733\"; // Green for empty, red for occupied\n\n            if (status === \"Occupied\") {\n                const carDiv = document.createElement('div');\n                carDiv.classList.add('car'); // Add class for styling\n                spot.appendChild(carDiv); // Append car to the parking spot\n                setInitialCarPosition()\n            }\n        \n        }\n        // Update the gauge after refreshing the display\n        updateOccupancyGauge();\n    }\n\n\n    // Calculate the distance from the entrance to a parking spot\n    function calculateDistance(spot) {\n        const carRect = carElement.getBoundingClientRect();\n        const spotRect = spot.getBoundingClientRect();\n        \n        // Calculate center points for the car and the spot\n        const carCenterX = carRect.left + carRect.width / 2;\n        const carCenterY = carRect.top + carRect.height / 2;\n        \n        const spotCenterX = spotRect.left + spotRect.width / 2;\n        const spotCenterY = spotRect.top + spotRect.height / 2;\n        \n        // Compute the Euclidean distance\n        const dx = spotCenterX - carCenterX;\n        const dy = spotCenterY - carCenterY;\n        \n        return Math.sqrt(dx * dx + dy * dy);\n    }\n\n    // Determine the nearest empty spot\n    function findNearestEmptySpot() {\n        let nearestSpot = null;\n        let shortestDistance = Infinity;\n        \n        // Loop through all spots to find the nearest empty one\n        for (const spotId of parkingOrder) {\n            if (parkingStates[spotId] === \"Empty\") {\n                const distance = calculateDistance(parkingSpots[spotId]);\n                \n                if (distance < shortestDistance) {\n                    shortestDistance = distance;\n                    nearestSpot = spotId;\n                }\n            }\n        }\n        return nearestSpot;\n    }\n\n    // Move the car to the nearest empty spot\n    function moveCarToNearestSpot() {\n        const nearestSpot = findNearestEmptySpot();\n\n        if (nearestSpot) {\n            const spotElement = parkingSpots[nearestSpot];\n            const spotRect = spotElement.getBoundingClientRect();\n            const parentRect = carElement.parentElement.getBoundingClientRect();\n\n            // Calculate the car's new position relative to the parent container\n            const newLeft = spotRect.left - parentRect.left + spotRect.width / 2 - carElement.offsetWidth / 2;\n            const newTop = spotRect.top - parentRect.top + spotRect.height / 2 - carElement.offsetHeight / 2;\n\n            // Apply the calculated position with smooth animation\n            carElement.style.transition = \"all 1.5s ease-in-out\";\n            carElement.style.left = `${newLeft}px`;\n            carElement.style.top = `${newTop}px`;\n\n            // Update the nearest display\n            nearestDisplay.textContent = `Nearest Empty Spot: ${nearestSpot}`;\n\n            // Mark the spot as occupied after the car moves\n            setTimeout(() => {\n                parkingStates[nearestSpot] = \"Occupied\"; // Update parking state\n                displayInitialState(); // Refresh the display of parking spots\n                updateOccupancyGauge(); // Update the gauge\n                // Send the updated parking state back to Node-RED\n                send({payload : parkingStates}); // This line sends the updated data\n                nearestDisplay.textContent = \"Nearest Empty Spot: None\"; // Reset nearest display\n            }, 1500);\n        } else {\n            nearestDisplay.textContent = \"No Empty Spots Available\";\n        }\n    }\n\n    // Set initial car position at the entrance\n    function setInitialCarPosition() {\n        const entranceRect = entranceElement.getBoundingClientRect();\n        const parentRect = carElement.parentElement.getBoundingClientRect();\n        \n        // Center the car on the entrance\n        carElement.style.position = \"absolute\";\n        carElement.style.left = `${entranceRect.left - parentRect.left + entranceRect.width / 2 - carElement.offsetWidth / 2}px`;\n        carElement.style.top = `${entranceRect.top - parentRect.top + entranceRect.height / 2 - carElement.offsetHeight / 2}px`;\n    }\n    //Listen in for updated MQTT input\n    (function (scope) {\n    scope.$watch('msg.payload', function (data) {\n    if (data) {\n    console.log(\"Received parking data:\", data);\n    parkingStates = data; // Update the parking states\n    displayInitialState(); // Refresh the display\n    updateOccupancyGauge(); // Update the gauge after refreshing the display\n    }\n    });\n    })(scope);\n\n    // Initialize the program\n    function initialize() {\n        setInitialCarPosition();\n        displayInitialState();\n        // Add event listener for the button\n        moveCarButton.addEventListener(\"click\", moveCarToNearestSpot);\n    }\n\n    // Run the initialization\n    initialize();\n</script>\n\n<style>\n    /* General styles */\n    .entrance {\n        position: absolute;\n        top: -50px;\n        /* Place it above the carpark */\n        left: 50%;\n        transform: translateX(-50%);\n        text-align: center;\n        font-weight: bold;\n        font-size: 14px;\n        color: #ffffff;\n        background-color: #525257;\n        padding: 5px 10px;\n        border-radius: 5px;\n        z-index: 10;\n        /* Ensure it stays above other elements */\n    }\n\n    .carpark-container {\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        gap: 20px;\n        height: 100vh;\n        background-color: #ffffff;\n        padding: 20px;\n    }\n\n    .carpark {\n        position: relative;\n        width: 300px;\n        height: 400px;\n        padding: 20px;\n        background-color: #525257; \n        border: 4px solid #4b4b50;\n        border-radius: 12px;\n        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);\n    }\n\n    .parking-grid {\n        display: grid;\n        grid-template-columns: repeat(3, 1fr);\n        gap: 10px;\n    }\n\n    .spot {\n        width: 80px;\n        height: 80px;\n        border: 2px dashed #ccc;\n        border-radius: 5px;\n        display: flex;\n        justify-content: center;\n        align-items: center;\n        font-size: 14px;\n        font-weight: bold;\n        color: white;\n    }\n\n    .car {\n        width: 40px;\n        height: 20px;\n        background-color: #007bff;\n        border-radius: 4px;\n        position: absolute;\n        z-index: 10;\n    }\n\n    .car::before,\n    .car::after {\n        content: \"\";\n        position: absolute;\n        width: 8px;\n        height: 8px;\n        background-color: black;\n        border-radius: 50%;\n        bottom: -4px;\n    }\n\n    .car::before {\n        left: 5px;\n    }\n\n    .car::after {\n        right: 5px;\n    }\n\n    .entrance {\n        text-align: center;\n    }   \n    \n    #moveCarButton{\n        appearance: none;\n        background-color: #000000;\n        border: 2px solid #1A1A1A;\n        border-radius: 15px;\n        box-sizing: border-box;\n        color: #FFFFFF;\n        cursor: pointer;\n        display: inline-block;\n        font-family: Roobert,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe\n        UI Emoji\",\"Segoe UI Symbol\";\n        font-size: 16px;\n        font-weight: 500;\n        line-height: normal;\n        margin: 0;\n        min-height: 60px;\n        min-width: 0;\n        outline: none;\n        padding: 16px 24px;\n        text-align: center;\n        text-decoration: none;\n        transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);\n        user-select: none;\n        -webkit-user-select: none;\n        touch-action: manipulation;\n        width: 300px; \n        max-width: 80%; \n        will-change: transform;\n    }\n    \n    #moveCarButton:disabled {\n        pointer-events: none;\n    }\n    \n    #moveCarButton:hover {\n        box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;\n        transform: translateY(-2px);\n    }\n    \n    #moveCarButton:active {\n        box-shadow: none;\n        transform: translateY(0);\n    }\n    #nearest{\n        color: #000000; \n        font-size: 16px;\n        text-align: center;\n    }\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 760,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    }
+]

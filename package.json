@@ -1,0 +1,12 @@
+{
+    "name": "SpotFinder",
+    "description": "A visualization of a smart parking management system as part of an IoT project in Stockholm University",
+    "version": "0.0.1",
+    "dependencies": {},
+    "node-red": {
+        "settings": {
+            "flowFile": "flows.json",
+            "credentialsFile": "flows_cred.json"
+        }
+    }
+}
