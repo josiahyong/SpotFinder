@@ -19,7 +19,7 @@ Before running this project, ensure you have:
 
 2. Once you're at the editor in your browser, click the menu (☰) -> Project -> New -> Clone Repository. Enter a project name and the link to this repository. Click **Clone Repository** at bottom right when done.
 
-3. Click **Deploy**
+3. Click **Deploy**.
 
 4. Once deployed, visit `http://127.0.0.1:1880/ui` for the visualisation.
 
