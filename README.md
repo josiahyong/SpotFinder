@@ -3,16 +3,32 @@ SpotFinder
 
 A visualisation of a smart parking management system as part of an IoT project in Stockholm University
 
-### About
+### Features
+- Real-time parking occupancy gauge.
+- Automatic nearest empty spot detection.
+- Animated car movement to the selected spot.
+- Color-coded parking spots (green = empty, red = occupied).
+- Node-RED Dashboard integration for an interactive UI.
 
-In order to launch this visualisation locally, you have to install node-red first. 
+### Requirements
+Before running this project, ensure you have:
+- Node.js installed
+- Node-RED installed (npm install -g node-red)
 
-run `% node-red`. A line in the output will show where to view your Node-RED server `[info] Server now running at http://127.0.0.1:1880/`
+### Getting Started
+1. Run `node-red` to get the server running. A line in the output will show where to view your Node-RED server `[info] Server now running at http://127.0.0.1:1880/`.
 
-Once done, simply import the flows.json file into the node-red dashboard launched.
-<img width="700" height="595" alt="Screenshot 2025-08-08 at 1 30 16 PM" src="https://github.com/user-attachments/assets/430756ef-d503-46ac-bca5-5dcd00c48656" />
+2. Once you're at the editor in your browser, click the menu (☰) -> Project -> New -> Clone Repository. Enter a project name and the link to this repository. Click **Clone Repository** at bottom right when done.
 
-Deploy the flow and visualise it at `http://127.0.0.1:1880/ui`
+3. Click **Deploy**
+
+4. Once deployed, visit `http://127.0.0.1:1880/ui` for the visualisation.
+
+### Demo
+https://github.com/user-attachments/assets/ceaf3e10-72c5-433b-b40c-931e747f43ad
+
+
+
 
 
 
