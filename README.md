@@ -25,7 +25,8 @@ Before running this project, ensure you have:
 4. Once deployed, visit `http://127.0.0.1:1880/ui` for the visualisation.
 
 ### Demo
-https://github.com/user-attachments/assets/ceaf3e10-72c5-433b-b40c-931e747f43ad
+https://github.com/user-attachments/assets/7bab901f-2498-44f5-919c-1794d9b76522
+
 
 
 
